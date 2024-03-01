@@ -11,6 +11,7 @@ router.post('/register',
             const {name, email, password} = req.body;
 
             //check if user exists
+            //TODO: Validate emails beforehand, suggestion: regex (plenty online)
             const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [email]);
 
             if (user.rows.length !== 0) {
