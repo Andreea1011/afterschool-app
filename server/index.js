@@ -7,11 +7,6 @@ const app = express();
 app.use(express.json()); //req.body
 app.use(cors());
 
-
-//Routes
-
-//register and login
-
 app.use('/auth', authRouter);
 
 app.listen(5000, () => {
